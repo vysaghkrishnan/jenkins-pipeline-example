@@ -29,6 +29,11 @@ agent any
 					sh 'echo "Building Docker Image...."'
 					sh 'docker build -t vysaghkrishnan/myjavaapp:${BUILD_NUMBER} .'
 					sh 'echo "Docker Image built successfully...."'
+		stage('Push Docker Image') {
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+				sh 'docker push vysaghkrishnan/myjavaapp:${BUILD_NUMBER}'
+			}
 				}
 			}
 		}
