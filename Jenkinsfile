@@ -6,6 +6,10 @@ agent any
 		maven "MY_MAVEN"
 		jdk "MY_JAVA"
 	}
+
+	environment {
+		DOCKERHUB_CREDENTIALS = credentials('DOCKER_CREDS')
+	}
 	
 	stages {
 		//stage('Initialise') {
