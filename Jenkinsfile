@@ -37,7 +37,7 @@ agent any
 
 		stage('Push Docker Image') {
 			steps {
-				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u vysaghkrishnan --password-stdin'
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR  --password-stdin'
 				sh 'docker push vysaghkrishnan/myjavaapp:${BUILD_NUMBER}'
 			
 				}
