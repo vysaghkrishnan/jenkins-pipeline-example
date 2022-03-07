@@ -8,7 +8,7 @@ agent any
 	}
 
 	environment {
-		DOCKERHUB_CREDENTIALS = credentials('DOCKER_CREDS')
+		DOCKERHUB_CREDENTIALS = credentials('DOCKERHUB_CREDS')
 	}
 	
 	stages {
